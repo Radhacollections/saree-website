@@ -73,7 +73,7 @@
 
         /* Products */
         .products {
-            padding: 60px;
+            padding: 30px 15px;
             text-align: center;
         }
 
@@ -84,14 +84,14 @@
 
      .product-grid {
     display: grid;
-    gap: 20px;
-    padding: 20px;
+    gap: 15px;
 }
 
-/* Mobile - 2 images side by side */
+/* Mobile */
 @media (max-width: 768px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
+        padding: 0;   /* remove extra space */
     }
 }
 
@@ -99,20 +99,28 @@
 @media (min-width: 769px) {
     .product-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 20px;
     }
 }
-
         .card {
             background: white;
             padding: 20px;
             border-radius: 8px;
             border: 1px solid #eee;
         }
+            .card img {
+    width: 100%;
+    height: 250px;   /* Desktop height (keep same) */
+    object-fit: cover;
+    border-radius: 6px;
+}
 
-        .card img {
-            width: 100%;
-            border-radius: 6px;
-        }
+/* Mobile - Make images horizontal */
+@media (max-width: 768px) {
+    .card img {
+        height: 180px;   /* Smaller height = horizontal look */
+    }
+}    
 
         .card h3 {
             margin: 15px 0 5px;
@@ -140,7 +148,7 @@
         footer {
             background-color: white;
             text-align: center;
-            padding: px;
+            padding: 20px;
             border-top: 1px solid #e6d8b5;
             margin-top: 60px;
             color: #777;
@@ -163,27 +171,7 @@
 
       
 
-     .card {
-           width: 250px;
-           background: white;
-           padding: 15px;
-           border: 1px solid #eee;
-           text-align: center;
-    }
-
-    .card img {
-         width: 100%;
-    }
-
-    .whatsapp-btn {
-          background: #bfa046;
-          color: white;
-          padding: 8px 15px;
-          text-decoration: none;
-          display: inline-block;
-          margin-top: 10px;
-    }
- 
+     
  
     </style>
 </head>
@@ -248,6 +236,9 @@ function loadCategory(category) {
   });
 
 }  
+window.onload = function() {
+   loadCategory('silk');
+};
 </script>
 
 <body>
