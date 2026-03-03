@@ -193,7 +193,7 @@
 </head>
 <script>
 
-var phoneNumber = "919959921436"; // put your number
+var phoneNumber = "91"; // put your number
 
 var products = {
   silk: [
@@ -228,25 +228,30 @@ var products = {
     {name: "Classic Orange Saree", price: "₹600", image: "c1.jpg"}
   ]
 };
-
 function loadCategory(category) {
 
   var container = document.getElementById("productsContainer");
-  container.innerHTML += `
-  <div class="card">
-    <img src="${product.image}">
-    <h3>${product.name}</h3>
-    <p class="price">${product.price}</p>
-    <a class="whatsapp-btn" href="${whatsappLink}" target="_blank">
-      Order on WhatsApp
-    </a>
-  </div>
-`;
-  
+  container.innerHTML = "";
+
+  products[category].forEach(function(product){
+
+    var message = "Hi, I want " + product.name + " - " + product.price;
+    var whatsappLink = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
+
+    container.innerHTML += `
+      <div class="card">
+        <img src="${product.image}">
+        <h3>${product.name}</h3>
+        <p class="price">${product.price}</p>
+        <a class="whatsapp-btn" href="${whatsappLink}" target="_blank">
+          Order on WhatsApp
+        </a>
+      </div>
+    `;
+
   });
 
-}
-
+}  
 </script>
 
 <body>
