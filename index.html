@@ -35,23 +35,25 @@
 
         /* Navigation */
         nav {
-            text-align: Right;
-            background-color: white;
-            border-bottom: 1px solid #e6d8b5;
-            margin: 0;
-            padding:0;
-        }
+    display: flex;
+    justify-content: center;   /* center items */
+    align-items: center;
+    flex-wrap: nowrap;         /* force one line */
+    gap: 15px;                 /* equal spacing */
+    background-color: white;
+    border-bottom: 1px solid #e6d8b5;
+    padding: 10px 0;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #444;
-            margin: 0 30px;
-            font-size: 24px;
-        }
+nav a {
+    text-decoration: none;
+    color: #444;
+    font-size: 16px;
+}
 
-        nav a:hover {
-            color: #bfa046;
-        }
+nav a:hover {
+    color: #bfa046;
+}
 
         /* Hero Section */
         .hero {
