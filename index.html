@@ -175,19 +175,21 @@
           display: inline-block;
           margin-top: 10px;
     }
-    </style>
-@media (max-width: 768px) {
+    @media (max-width: 768px) {
 
-    .product-grid {
-        gap: 15px;
-        padding: 15px;
-    }
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+  }
 
-    .product {
-        width: 45%;
-    }
+  .card {
+    width: 45%;
+  }
 
 }
+    </style>
 </head>
 <script>
 
@@ -238,7 +240,7 @@ function loadCategory(category) {
     var whatsappLink = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
 
     container.innerHTML += `
-      <div class="card">
+      <div class="product-grid">
         <img src="${product.image}">
         <h3>${product.name}</h3>
         <p>${product.price}</p>
